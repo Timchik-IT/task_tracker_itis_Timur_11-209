@@ -11,9 +11,9 @@
   <p class="link"> <%= link_to "deadline reverse", :sort => "deadline_at desc"%><p>
 </div>
 
-<% @tasks.each do |task| %>
+<% @tasks.each_with_index do |task, index| %>
   <div class="record">
-    <p><%= task.id %>. <%= task.name %></p>
+    <p><%= index + 1 %>. <%= task.name %></p>
     <p><%= task.description %></p>
     <p><%= task.status %></p>
     <p><%= task.deadline_at %></p>
