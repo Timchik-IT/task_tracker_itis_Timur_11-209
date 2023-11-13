@@ -1,6 +1,5 @@
 require "rails_helper"
 
-
 describe Projects::Update do
   describe ".call" do
     let(:project) { create :project }
