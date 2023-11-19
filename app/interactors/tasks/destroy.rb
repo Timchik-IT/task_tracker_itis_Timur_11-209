@@ -5,7 +5,7 @@ module Tasks
     delegate :task, to: :context
 
     def call
-      context.fail!(error: "Fail..") unless task.destroy
+      context.fail!(error: "Task didn't delete") unless task.destroy
       context.notice = "Task successfully deleted"
     end
   end

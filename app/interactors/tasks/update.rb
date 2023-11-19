@@ -1,8 +1,12 @@
-module Tasks
+module Tasks 
   class Update
-    include Interactor::Organizer
+    include Interactor
 
-    organize Tasks::Create::PrepareParams,
-             Tasks::Updating
+    delegate :task_params, :task, to: :context
+
+    def call
+      context.fail!(error: "Task not updated") unless task.update(task_params)
+      context.notice = "Task successfully updated"
+    end
   end
 end

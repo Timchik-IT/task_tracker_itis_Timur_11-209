@@ -75,7 +75,7 @@ class TasksController < ApplicationController
   end
 
   def update_task
-    @update_task ||= ::Tasks::Update.call(task: @task,
+    @update_task ||= ::Tasks::Updater.call(task: @task,
                                           params: params)
   end
 end
