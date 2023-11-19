@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     authorize! @task
 
     if create_task.success?
-      redirect_to project_tasks_path(@project), notice: "Task successfully created!"  
+      redirect_to project_tasks_path(@project), notice: "Task successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -71,11 +71,11 @@ class TasksController < ApplicationController
   end
 
   def destroy_task
-    @destroy_task ||= ::Tasks::Destroy.call(task: @task)                                            
+    @destroy_task ||= ::Tasks::Destroy.call(task: @task)
   end
 
   def update_task
     @update_task ||= ::Tasks::Updater.call(task: @task,
-                                          params: params)
+                                           params: params)
   end
 end

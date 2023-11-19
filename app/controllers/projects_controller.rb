@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
   end
 
   def update_project
-    @update_project ||= ::Projects::Update.call(project: @project, 
+    @update_project ||= ::Projects::Update.call(project: @project,
                                                 project_params: project_params)
   end
 

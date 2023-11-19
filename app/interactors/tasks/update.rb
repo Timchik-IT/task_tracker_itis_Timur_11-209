@@ -1,4 +1,4 @@
-module Tasks 
+module Tasks
   class Update
     include Interactor
 

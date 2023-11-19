@@ -1,7 +1,7 @@
 module Projects
   class Destroy
     include Interactor
-        
+
     delegate :project, to: :context
 
     def call

@@ -58,8 +58,8 @@ class CommentsController < ApplicationController
   end
 
   def create_comment
-    @create_comment ||= ::Comments::Create.call(task: @task, 
-                                                comment_params: comment_params, 
+    @create_comment ||= ::Comments::Create.call(task: @task,
+                                                comment_params: comment_params,
                                                 user: current_user)
   end
 

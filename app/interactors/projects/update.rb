@@ -1,7 +1,7 @@
 module Projects
   class Update
     include Interactor
-        
+
     delegate :project, :project_params, to: :context
 
     def call
